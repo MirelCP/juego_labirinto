@@ -9,11 +9,18 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
-    <title>Laberinto</title>
+    <link rel="stylesheet" href="/styles.css">
+    <title>Laberinto Fantástico</title>
 </head>
 <body>
 
-    <canvas id=" miCanvas" ></canvas>
-    <script src="/laberinto.js"></script>
+    <h1>Laberinto Fantástico</h1>
+    <select id="nivel" onchange="cambiarNivel()">
+        <option value="facil">Fácil</option>
+        <option value="medio">Medio</option>
+        <option value="dificil">Difícil</option>
+    </select>
+    <canvas id="miCanvas"></canvas>
+    <script src="laberinto.js"></script>
 </body>
 </html>
