@@ -4,23 +4,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!--Usamos las librerias p5.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="styles.css">
     <title>Laberinto Fantástico</title>
 </head>
 <body>
+    <div id="intro-screen">
+        <h1 class="animate__animated animate__bounce">Laberinto Fantástico</h1>
+        <p class="animate__animated animate__flash">¿Te atreves a entrar?</p>
+        <button class="animate__animated animate__backInUp" onclick="empezarJuego()">Empezar</button>
+    </div>
 
-    <h1>Laberinto Fantástico</h1>
-    <select id="nivel" onchange="cambiarNivel()">
-        <option value="facil">Fácil</option>
-        <option value="medio">Medio</option>
-        <option value="dificil">Difícil</option>
-    </select>
-    <canvas id="miCanvas"></canvas>
+    <div id="level-screen" style="display: none;">
+        <h1 class="animate__animated animate__bounce">Elige tu nivel</h1>
+        <select id="level" onchange="cambiarNivel()">
+            <option value="facil">Fácil</option>
+            <option value="medio">Medio</option>
+            <option value="dificil">Difícil</option>
+        </select>
+        <button class="animate__animated animate__backInUp" onclick="empezarLaberinto()">Empezar</button>
+    </div>
+    
+
+    <div id="maze-screen" style="display: none;">
+        <div id="miCanvas"></div>
+        <div id="timer"></div>
+        <button class="animate__animated animate__backInUp" onclick="reiniciarJuego()">Volver al inicio</button>
+    </div>
+    
     <script src="laberinto.js"></script>
+
 </body>
 </html>

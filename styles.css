@@ -1,8 +1,24 @@
 body {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    height: 90vh;
-    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #F5F5F5;
+    color: #333;
+    text-align: center;
+}
+
+.pantalla {
+    padding: 20px;
+}
+
+button {
+    background: #007BFF;
+    color: #FFF;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
 }
