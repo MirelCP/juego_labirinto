@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.0"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="styles.css">
     <title>Laberinto Fantástico</title>
 </head>
@@ -31,11 +31,19 @@
 
     <div id="maze-screen" style="display: none;">
         <div id="miCanvas"></div>
-        <div id="timer"></div>
+        <div id="timer">Tiempo restante:</div> <!-- Mostrará el tiempo restante -->
         <button class="animate__animated animate__backInUp" onclick="reiniciarJuego()">Volver al inicio</button>
+        
+    </div>
+    <div id="timeout-message" style="display: none;">
+        ¡Tiempo agotado! Inténtalo de nuevo. 
+    </div>
+    <div id="victory-message" style="display: none;">
+        <h2 class="animate__animated animate__bounce">¡Has ganado!</h2>
+        
     </div>
     
     <script src="laberinto.js"></script>
-
+    
 </body>
 </html>
