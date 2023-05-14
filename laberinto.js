@@ -10,7 +10,16 @@ let laberinto; // laberinto
 let tiempoLimite; // Tiempo límite para completar el nivel
 let tiempoRestante; // Tiempo restante para completar el nivel
 let intervaloTiempo; // Identificador del intervalo de tiempo
+let instrucciones = document.getElementById('instrucciones'); 
+instrucciones.style.display = 'none'; 
 
+function verIns() {
+    if (instrucciones.style.display === 'none') {
+        instrucciones.style.display = 'block';
+    } else {
+        instrucciones.style.display = 'none';
+    }
+}
 
 
 
@@ -100,7 +109,7 @@ function setup() {
 
 function keyPressed() {
     if (laberinto[posY][posX] === 'F') {
-        return; // Salir de la función sin realizar ningún movimiento adicional
+        return; // Si ya llegó a la meta, no hacer nada
     }
     if (keyCode == UP_ARROW && posY > 0) {
         if (laberinto[posY - 1][posX] == 1 || laberinto[posY - 1][posX] == 'F') {
@@ -127,23 +136,27 @@ function keyPressed() {
     redraw();
 }
 
-function verificarVictoria() {
+function delay(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function verificarVictoria() {
     if (laberinto[posY][posX] === 'F') {
         clearInterval(intervaloTiempo); // Detener el contador de tiempo
         document.getElementById('maze-screen').classList.add('animate__animated', 'animate__bounceIn');
         document.getElementById('victory-message').style.display = 'block';
         
             confetti();
-            
-            setTimeout(() => {
-                document.getElementById('victory-message').style.display = 'none';
-            }, 3000); // Ocultar el mensaje de victoria después de 3 segundos
+
+            await delay(3000); // Agregar un delay de 3 segundos
+            document.getElementById('victory-message').style.display = 'none';
             
           
-        setTimeout(reiniciarJuego, 5000); 
-        
+        await delay(2000); // Agregar un delay de 2 segundos
+        reiniciarJuego();
     }
 }
+
 
 
 
@@ -217,7 +230,24 @@ function iniciarContadorTiempo() {
 function empezarJuego() {
     document.getElementById('intro-screen').style.display = 'none';
     document.getElementById('level-screen').style.display = 'block';
+    let level = document.getElementById("level");
+    let mensajeTie = document.getElementById("mensajeTie"); 
+
+    level.addEventListener("change", () => {
+        switch(level.value) {
+            case "facil":
+                mensajeTie.innerHTML = "Este nivel se debe completar en 30 segundos";
+                break;
+            case "medio":
+                mensajeTie.innerHTML = "Este nivel se debe completar en 60 segundos";
+                break;
+            case "dificil":
+                mensajeTie.innerHTML = "Este nivel se debe completar en 90 segundos";
+                break;
+        }
+    });
 }
+
 
 function empezarLaberinto() {
     document.getElementById('level-screen').style.display = 'none';

@@ -23,3 +23,40 @@ button:hover {
     background: #0056b3;
 }
 
+#instrucciones {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#instrucciones h2 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+#instrucciones ol {
+    line-height: 1.6;
+}
+
+#instrucciones li {
+    margin-bottom: 10px;
+}
+#mensajeTie {
+    font-size: 20px;
+    color: #4a4a4a;
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 20px;
+    border: 2px solid #4a4a4a;
+    border-radius: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#mensajeTie:empty {
+    display: none;
+}

@@ -15,7 +15,21 @@
     <div id="intro-screen">
         <h1 class="animate__animated animate__bounce">Laberinto Fantástico</h1>
         <p class="animate__animated animate__flash">¿Te atreves a entrar?</p>
+
+        <div id="instrucciones">
+            <h2>Instrucciones del Juego de Laberinto Fantástico</h2>
+            <ol>
+                <li>Inicio del juego: Al presionar el botón "Empezar", se te presentaran los niveles de deficultad disponibles</li>
+                <li>Navegación: Utiliza las teclas de flecha en tu teclado para moverte a través del laberinto. Puedes moverte hacia arriba, abajo, a la izquierda y a la derecha.</li>
+                <li>Objetivo: El objetivo del juego es encontrar la salida del laberinto, marcada con el color azul en el tablero.</li>
+                <li>Barreras: Algunas áreas del laberinto están bloqueadas y no puedes pasar a través de ellas.</li>
+                <li>Niveles de Dificultad: El juego tiene tres niveles de dificultad: fácil, medio y difícil. En el nivel fácil, el laberinto es pequeño y simple. En el nivel medio, el laberinto es más grande y un poco más complejo. En el nivel difícil, el laberinto es muy grande y complejo.</li>
+                <li>Finalización del Juego: El juego termina cuando encuentras la salida del laberinto. Si deseas jugar de nuevo, simplemente presiona el botón "Empezar" de nuevo o "Volver al inicio" en cualquier momento".</li>
+            </ol>
+        </div>
+        
         <button class="animate__animated animate__backInUp" onclick="empezarJuego()">Empezar</button>
+        <button class="animate__animated animate__backInUp" onclick="verIns()">Instrucciones</button>
     </div>
 
     <div id="level-screen" style="display: none;">
@@ -26,6 +40,8 @@
             <option value="dificil">Difícil</option>
         </select>
         <button class="animate__animated animate__backInUp" onclick="empezarLaberinto()">Empezar</button>
+        <p id="mensajeTie">Este nivel se debe completar en 30 segundos</p>
+
     </div>
     
 
